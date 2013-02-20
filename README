@@ -1,0 +1,33 @@
+# phantomFuncUnitPlugin
+
+## Dependencies
+
+ * (PhantomJS)[http://http://code.google.com/p/phantomjs/wiki/Installation] - Tested and working fine with version 1.5.
+ * Xvfb - if you plan to run the plugin on a machine without X (i.e. a CI server)
+
+## Configuration
+There's really not much to configure, however you can change the location of your js tests by editing phantomFuncUnit.yml in the plugin's config directory.
+
+
+## Usage
+
+To run all javascript tests:
+
+  ./symfony phantomFuncUnit:run
+
+To run a specific javascript test (e.g. a test suite at test/funcunit/moduleName/testA.js)
+
+  ./symfony phantomFuncUnit:run moduleName/testA
+
+To generate a JUnit xml:
+
+  ./symfony phantomFuncUnit:run --xml=log/funcunit_tests.xml
+
+
+## Notes for running on Hudson
+
+ * Make sure to run `export DISPLAY=:0` before running your funcunit tests on a machine with no X but with xvfb installed.
+   (This should be run on every hudson build.)
+
+ * You may have to make hudson an xuser if it tells you it can't find a display at :0 - `xhost +local:hudson`
+

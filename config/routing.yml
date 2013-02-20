@@ -1,0 +1,9 @@
+phantom_funcunit_test_url:
+  url: /phantom/funcunit/:url
+  param: { module: phantomFuncUnit, action: test }
+  requirements: { url: .* }
+
+phantom_qunit_test_url:
+  url: /phantom/qunit/:url
+  param: { module: phantomQUnit, action: test }
+  requirements: { url: .* }

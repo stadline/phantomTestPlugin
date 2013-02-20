@@ -1,0 +1,17 @@
+dev:
+  enabled: true
+
+test:
+  enabled: true
+
+all:
+  enabled: false
+  url_base: http://localhost/frontend_dev.php
+  
+  funcunit:
+    #if not preceded with a /, path are relative to the project root
+    test_directory: test/phantomFuncUnit
+  
+  qunit:
+    #if not preceded with a /, path are relative to the project root
+    test_directory: test/phantomQUnit
